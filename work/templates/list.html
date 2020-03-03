@@ -1,0 +1,38 @@
+
+<table>
+
+<tr>
+	<th></th>
+    <th>Платежи</th>
+    <th></th>
+    <th>Долги</th>
+</tr>
+{% for i in list %}
+	<tr>
+	{% for x in i %}
+		<th>{{ x.id }}</th>
+		<th>{{ x.date }}</th>
+	{% endfor %}
+ 	</tr>
+{% endfor %}
+</table>
+
+<table>
+
+<tr>
+	<th></th>
+    <th>Платежи без долга</th>
+
+</tr>
+{% for i in payments_not_debt %}
+	<tr>
+		<th>{{ i.id }}</th>
+		<th>{{ i.date }}</th>
+ 	</tr>
+{% endfor %}
+</table>
+
+<form action="http://127.0.0.1:8000/reset">
+	<button>Ресет</button>
+</form>
+
